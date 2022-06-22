@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import tn.esprit.spring.entities.User;
+import com.example.demo.User;
+
 import tn.esprit.spring.services.IUserService;
 
 // userRestControl

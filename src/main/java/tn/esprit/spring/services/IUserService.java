@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import tn.esprit.spring.entities.User;
+import com.example.demo.User;
 
 @Service
 public interface IUserService { 

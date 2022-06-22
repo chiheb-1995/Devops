@@ -13,8 +13,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ContextConfiguration;
 
-import tn.esprit.spring.entities.Role;
-import tn.esprit.spring.entities.User;
+import com.example.demo.Role;
+import com.example.demo.User;
+
 import tn.esprit.spring.repository.UserRepository;
 
 @SpringBootTest(classes = UserServiceImpl.class)
