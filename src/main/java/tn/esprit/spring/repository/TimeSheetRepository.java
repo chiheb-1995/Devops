@@ -29,7 +29,7 @@ public interface TimeSheetRepository extends CrudRepository<TimeSheet, Integer> 
 				+ "t.employe=:emp and "
 				+ "t.timesheetPK.dateDebut>=:dateD and "
 				+ "t.timesheetPK.dateFin<=:dateF")
-	//D'un employe bien defini
+
 	public List<TimeSheet> getTimesheetsByMissionAndDate(@Param("emp")Employe employe, @Param("mis")Mission mission, @Param("dateD")Date dateDebut,@Param("dateF")Date dateFin);
 
 	  public TimeSheet findBytimesheetPK(TimeSheetPK timesheetPK);
