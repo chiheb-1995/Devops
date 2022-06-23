@@ -1,4 +1,4 @@
-package com.example.demo;
+package tn.esprit.spring.entities;
 
 
 import java.io.Serializable;
@@ -14,8 +14,12 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+
+
 @Entity
 @Table(name = "T_USER")
+@EnableAutoConfiguration
 public class User implements Serializable {
 	
 	

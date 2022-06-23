@@ -7,8 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.User;
-
+import tn.esprit.spring.entities.User;
 import tn.esprit.spring.repository.UserRepository;
 
 @Service
