@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import tn.esprit.spring.entities.Departement;
 @Repository
-public interface DepartementRepository extends CrudRepository<Departement, Integer>{
+public interface DepartementRepository extends CrudRepository<Departement, Long>{
 
 }
