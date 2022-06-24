@@ -44,7 +44,7 @@ public class TimeSheetServiceImpl implements ITimeSheetService {
 		
 	}
 
-	public void ajouterTimeSheet(int missionId, long employeId, Date dateDebut, Date dateFin) {
+	public void ajouterTimeSheet(int missionId, int employeId, Date dateDebut, Date dateFin) {
 		TimeSheetPK timesheetPK = new TimeSheetPK();
 		timesheetPK.setDateDebut(dateDebut);
 		timesheetPK.setDateFin(dateFin);
@@ -59,9 +59,9 @@ public class TimeSheetServiceImpl implements ITimeSheetService {
 	}
 
 	
-	public void validerTimeSheet(int missionId, long employeId, Date dateDebut, Date dateFin, long validateurId) {
+	public void validerTimeSheet(int missionId, int employeId, Date dateDebut, Date dateFin, int validateurId) {
 		System.out.println("In valider Timesheet");
-		Employe validateur = employeRepository.findById((int) validateurId).get();
+		Employe validateur = employeRepository.findById(validateurId).get();
 		Mission mission = missionRepository.findById(missionId).get();
 		if(!validateur.getRole().equals(Role.CHEF_DEPARTEMENT)){
 			System.out.println("l'employe doit etre chef de departement pour valider une feuille de temps !");
@@ -88,7 +88,7 @@ public class TimeSheetServiceImpl implements ITimeSheetService {
 	}
 
 	
-	public List<Mission> findAllMissionByEmployeJPQL(long employeId) {
+	public List<Mission> findAllMissionByEmployeJPQL(int employeId) {
 		return timesheetRepository.findAllMissionByEmployeJPQL(employeId);
 	}
 

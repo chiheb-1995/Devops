@@ -9,8 +9,8 @@ import tn.esprit.spring.entities.Mission;
 public interface ITimeSheetService {
 	public int ajouterMission(Mission mission);
 	public void affecterMissionADepartement(int missionId, int depId);
-	public void ajouterTimeSheet(int missionId, long employeId, Date dateDebut, Date dateFin);
-	public void validerTimeSheet(int missionId, long employeId, Date dateDebut, Date dateFin, long validateurId);
-	public List<Mission> findAllMissionByEmployeJPQL(long employeId);
+	public void ajouterTimeSheet(int missionId, int employeId, Date dateDebut, Date dateFin);
+	public void validerTimeSheet(int missionId, int employeId, Date dateDebut, Date dateFin, int validateurId);
+	public List<Mission> findAllMissionByEmployeJPQL(int employeId);
 	public List<Employe> getAllEmployeByMission(int missionId);
 }

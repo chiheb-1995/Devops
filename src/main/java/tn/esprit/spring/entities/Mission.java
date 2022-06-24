@@ -3,6 +3,7 @@ package tn.esprit.spring.entities;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,11 +24,11 @@ public class Mission implements Serializable {
 	
 	private String description;
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	private Departement departement;
 	
 	@OneToMany(mappedBy="mission")
-	private  List<TimeSheet> timeSheets;
+	private  List<TimeSheet> timesheets;
 	
 	public Mission() {
 		super();
@@ -72,11 +73,11 @@ public class Mission implements Serializable {
 	}
 
 	public List<TimeSheet> getTimesheets() {
-		return timeSheets;
+		return timesheets;
 	}
 
 	public void setTimesheets(List<TimeSheet> timesheets) {
-		this.timeSheets = timesheets;
+		this.timesheets = timesheets;
 	}
 	
 	
