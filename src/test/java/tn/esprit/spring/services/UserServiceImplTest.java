@@ -16,6 +16,7 @@ import org.springframework.test.context.ContextConfiguration;
 import tn.esprit.spring.entities.Role;
 import tn.esprit.spring.entities.User;
 import tn.esprit.spring.repository.UserRepository;
+import tn.esprit.spring.services.impl.UserServiceImpl;
 
 @SpringBootTest(classes = UserServiceImpl.class)
 @ContextConfiguration
