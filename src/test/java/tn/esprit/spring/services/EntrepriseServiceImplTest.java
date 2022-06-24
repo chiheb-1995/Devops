@@ -53,7 +53,7 @@ class EntrepriseServiceImplTest {
     @Order(3)
     void affectDepartementToEnterprise() {
         l.info("affecterDepartementAEntreprise() Test");
-        Departement dep = new Departement("RH");
+        Departement dep = new Departement("IT");
         long idDepartment = iEntrepriseService.ajouterDepartement(dep);
         iEntrepriseService.affecterDepartementAEntreprise(idDepartment, 1);
         Entreprise entreprise = iEntrepriseService.getEntrepriseById(1);

@@ -68,7 +68,7 @@ public class EmployeServiceImpl implements IEmployeService {
     @Transactional    
     public void affecterEmployeADepartement(int employeId, int depId) {
         try {
-            Departement depManagedEntity = deptRepoistory.findById(depId).orElse(null);
+            Departement depManagedEntity = deptRepoistory.findById((long) depId).orElse(null);
             Employe employeManagedEntity = employeRepository.findById(employeId).orElse(null);
               if(depManagedEntity != null) {
             if (depManagedEntity.getEmployes() == null) {
@@ -90,7 +90,7 @@ public class EmployeServiceImpl implements IEmployeService {
     @Transactional
     public void desaffecterEmployeDuDepartement(int employeId, int depId)
     { try {
-        Departement dep = deptRepoistory.findById(depId).orElse(null);
+        Departement dep = deptRepoistory.findById((long) depId).orElse(null);
   if (dep !=null) {
         int employeNb = dep.getEmployes().size();
         for(int index = 0; index < employeNb; index++){
@@ -238,7 +238,7 @@ public class EmployeServiceImpl implements IEmployeService {
     }
     
     @Override
-    public long ajouterEmploye(Employe employe) {
+    public int ajouterEmploye(Employe employe) {
 		employeRepository.save(employe);
 		return employe.getId();
 	}

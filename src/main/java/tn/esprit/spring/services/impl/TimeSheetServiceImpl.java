@@ -1,7 +1,7 @@
 package tn.esprit.spring.services.impl;
 
-import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +38,7 @@ public class TimeSheetServiceImpl implements ITimeSheetService {
     
 	public void affecterMissionADepartement(int missionId, int depId) {
 		Mission mission = missionRepository.findById(missionId).orElseThrow(() -> new RuntimeException("NotFound"));
-		Departement dep = deptRepoistory.findById(depId).orElseThrow(() -> new RuntimeException("NotFound"));;
+		Departement dep = deptRepoistory.findById((long) depId).orElseThrow(() -> new RuntimeException("NotFound"));;
 		mission.setDepartement(dep);
 		missionRepository.save(mission);
 		
