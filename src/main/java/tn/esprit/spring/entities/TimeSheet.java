@@ -34,7 +34,7 @@ public class TimeSheet implements Serializable{
 		this.isValide = isValide;
 	}
 
-	public TimeSheetPK getTimeSheetPK() {
+	public TimeSheetPK getTimesheetPK() {
 		return timesheetPK;
 	}
 

@@ -6,10 +6,12 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -22,7 +24,7 @@ public class Employe implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
+	private int id;
 	
 	private String prenom;
 	
@@ -38,17 +40,21 @@ public class Employe implements Serializable {
 	private Role role;
 	 
 	@JsonIgnore
-	@ManyToMany(mappedBy="employes" )
+	@ManyToMany(mappedBy="employes", fetch = FetchType.EAGER)
 	private List<Departement> departements;
 	
 	@OneToOne
 	private Contrat contrat; 
 	
+	@JsonIgnore
+	@OneToMany(mappedBy="employe")
+	private List<TimeSheet> timesheets;
+	
 	public Employe() {
 		super();
 	}
 	
-	public Employe(Long id, String prenom, String nom, String email, String password, boolean actif, Role role) {
+	public Employe(int id, String prenom, String nom, String email, String password, boolean actif, Role role) {
 		super();
 		this.id = id;
 		this.prenom = prenom;
@@ -144,13 +150,22 @@ public class Employe implements Serializable {
 		this.contrat = contrat;
 	} 
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
+	
+	public List<TimeSheet> getTimesheets() {
+		return timesheets;
+	}
+
+	public void setTimesheets(List<TimeSheet> timesheets) {
+		this.timesheets = timesheets;
+	}
+
 
 	@Override
 	public String toString() {
