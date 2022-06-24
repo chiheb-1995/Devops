@@ -70,5 +70,11 @@ public class Entreprise implements Serializable{
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
+	public void addDepartement(Departement departement){
+		departement.setEntreprise(this);
+		this.departements.add(departement);
+	}
+
+
 }
