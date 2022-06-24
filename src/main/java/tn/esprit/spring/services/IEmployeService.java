@@ -33,7 +33,7 @@ public interface IEmployeService {
     Date dateDebut, Date dateFin);
 
     int addOrUpdateEmploye(Employe employe);
-    public long ajouterEmploye(Employe employe);
+    public int ajouterEmploye(Employe employe);
 	
 
 
