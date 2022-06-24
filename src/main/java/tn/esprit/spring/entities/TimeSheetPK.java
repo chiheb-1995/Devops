@@ -70,7 +70,7 @@ public class TimeSheetPK implements Serializable {
 			int result = 1;
 			result = prime * result + ((dateDebut == null) ? 0 : dateDebut.hashCode());
 			result = prime * result + ((dateFin == null) ? 0 : dateFin.hashCode());
-			result = (int) (prime * result + idEmploye);
+			result = prime * result + idEmploye;
 			result = prime * result + idMission;
 			return result;
 		}
