@@ -236,5 +236,11 @@ public class EmployeServiceImpl implements IEmployeService {
         // TODO Auto-generated method stub
         return 0;
     }
+    
+    @Override
+    public long ajouterEmploye(Employe employe) {
+		employeRepository.save(employe);
+		return employe.getId();
+	}
 
 }
