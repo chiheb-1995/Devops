@@ -68,4 +68,14 @@
 			</plugin>
 		</plugins>
 	</build>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>devops</id>
+			<url>http://localhost:8081/nexus/content/repositories/maven-snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>devops</id>
+			<url>http://localhost:8081/nexus/content/repositories/maven-releases/</url>
+		</repository>
+	</distributionManagement>
 </project>
